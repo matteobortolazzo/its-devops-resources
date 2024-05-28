@@ -57,7 +57,9 @@ This is a small document to help you get started with modern DevOps practices an
 
 Be a good engineer doesn't mean to be fast. Your brain is more important than your hands.
 
-HOWEVER, if you are also fast, it's better. Here are some tools that can help you be faster:
+HOWEVER, if you are also fast, it's better. If you are fast you won't experience those micro context switches that slow you down and you can just type as the speed of thought.
+
+Here are some tools that can help you be faster:
 - **Keyboard**: Minimize the use of the mouse, they keyboard is faster, and you can do more with it.
   - **Mechanical keyboards**: They are more comfortable and better feedback [Great price/quality](https://www.keychron.com/)
   - **Touch typing**: It's faster than looking at the keyboard
@@ -72,12 +74,16 @@ HOWEVER, if you are also fast, it's better. Here are some tools that can help yo
 - **The terminal**: It's faster than any GUI if you know what you need to do
   - *oh-my-posh*: themes, *Git* info and more for *Bash* and *Powershell*
   - *zsh*: A better shell, with autocompletion and more (Oh my ZSH)
+- **Shortcuts**: Learn the shortcuts of your IDE, OS and tools they are faster than the mouse
 - **Vim** motions (installable on any IDE)
+  - You will be able to edit text much faster in any IDE
+  - It is frustrating at the beginning, but it's worth it. Start with just a few motions
   - [YouTube - Vim motions playlist](https://www.youtube.com/watch?v=X6AR2RMB5tE&list=PLm323Lc7iSW_wuxqmKx_xxNtJC_hJbQ7R)
-- **NeoVim** (When you mastered Vim motions). 
+- **NeoVim** (When you mastered Vim motions)
   - From IDE to PDE (Personal Development Environment), you can make it work exactly as you want.
   - [YouTube - NeoVim Kickstart](https://www.youtube.com/watch?v=m8C0Cq9Uv9o)
 - **Tmux** (Multiple terminal "windows" in one terminal)
+  - You can have multiple terminals in one terminal, create sessions, windows, panels, and more.
   - [YouTube - Tmux explained](https://youtu.be/niuOc02Rvrc?si=MOBA-YV9tC8yhN8z)
 
 ### YouTube channels
@@ -114,6 +120,10 @@ Git is a **distributed** version control system. It's the most used version cont
 - Amend (change the last commit)
 - Bisect (find the commit that broke the code)
 - Hooks (pre-commit, pre-push, post-commit, post-push)
+
+- Pull request
+- Code review
+- Fork
 
 #### Services
 - **GitHub**
