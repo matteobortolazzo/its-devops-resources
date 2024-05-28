@@ -9,9 +9,26 @@ This is a small document to help you get started with modern DevOps practices an
 - **Be curious**: Always be curious about how things work. Use *YouTube* and *Twitter* and follow people and projects.
 - **Challenge yourself**: Build complex projects and solve complex problems.
 - **Simplify**: Once you know how to build complex things, strive to simplify them.
-- **Be nice**: Be nice to your colleagues, they are your best allies.
-- **Be humble**: You don't know everything, and that's fine.
-- **Exercise**: Take care of your body, it's the only one you have.
+  - Don't use the latest technology just because it's new. Use it because it's better.
+  - You don't need NoSQL, Microservices, or Kubernetes if you don't have a problem that needs them.
+  - [YouTube - Microservices](https://youtu.be/y8OnoxKotPQ?si=HBQx4jfZYX32jQNg
+- **Be nice**:
+  - Be nice to your colleagues, they are your best allies.
+  - Be humble, you don't know everything, and that's fine.
+  - There's no perfect language, framework, or tool. Use the right tool for the job and skillset.
+- **Take care of your body** 
+  - Exercise and eat well, it's the only body you have.
+  - **Good Chair**: You will spend a lot of time on it.
+  - **Standing Desk**: It's better for your back. 
+  - **Alice/Split keyboard**: It's better for your wrists
+- **Fight Scrum**: Agile is great, Scrum is not. 
+  - Scrum is a tool, not a goal. 
+  - Scrum is not the only way to be Agile.
+  - Scrum is not the only way to be productive.
+  - Run away from [SAFe](https://scaledagileframework.com/)
+  - Challenge the status quo.
+  - [YouTube - The Agile Paradoxon](https://youtu.be/Bez7wmAsxjE?si=pJVrgVTJ8qCUoPKs)
+  - [YouTube - The Expert](https://youtu.be/BKorP55Aqvg?si=ryEfSgHU253hyVkK)
 
 ### Example projects
 
@@ -42,8 +59,7 @@ Be a good engineer doesn't mean to be fast. Your brain is more important than yo
 
 HOWEVER, if you are also fast, it's better. Here are some tools that can help you be faster:
 - **Keyboard**: Minimize the use of the mouse, they keyboard is faster, and you can do more with it.
-  - **Mechanical keyboard**
-      - **Split keyboard**: It's better for your wrists
+  - **Mechanical keyboards**: They are more comfortable and better feedback [Great price/quality](https://www.keychron.com/)
   - **Touch typing**: It's faster than looking at the keyboard
 - **Linux**: It's faster than Windows if you know what you need to do
   - You can tailor it to your needs
@@ -71,7 +87,7 @@ HOWEVER, if you are also fast, it's better. Here are some tools that can help yo
 - [MorroLinux](https://www.youtube.com/@morrolinux): Linux (ITA)
 - [DevOps Toolbox](https://www.youtube.com/@devopstoolbox): Generic DevOps practices, Linux, development
 - [typecraft](https://www.youtube.com/@typecraft_dev): Generic development practices
-
+- YouTube will suggest you more channels based on your interests
 
 ## DevOps
 
@@ -221,3 +237,26 @@ resource name_resource 'Microsoft.Web/staticSites@2021-01-15' = {
 ```
 
 With the code above we can create a static website on Azure. The result is reproducible and can be versioned. A second parameter file can be used to change the values.
+
+### Monitoring and Alerting
+
+**Monitoring**: is the practice of observing the system to check its health and performance.
+**Alerting**: is the practice of sending notifications when something goes wrong.
+
+Ideally, you need to find the problem before the user does.
+
+Log things like:
+- Errors
+- Warnings
+- Request timing
+- Dependencies timing
+
+Create queries on logs to:
+- Find errors
+- Find slow requests
+- Find the most used features
+- Create dashboards
+- Create alerts
+- Create reports
+
+You can use tools like *Prometheus*, *Grafana*, *Azure Monitor*, *AWS CloudWatch* to create dashboards and alerts.
