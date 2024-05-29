@@ -12,6 +12,7 @@ This is a small document to help you get started with modern DevOps practices an
   - Don't use the latest technology just because it's new. Use it because it's better.
   - You don't need NoSQL, Microservices, or Kubernetes if you don't have a problem that needs them.
   - [YouTube - Microservices](https://youtu.be/y8OnoxKotPQ?si=HBQx4jfZYX32jQNg)
+- **Work iteratively**: Don't try to build everything at once. Build small parts and iterate on them.
 - **Security**: Always think about security. Data leaks and downtime are expesive, very.
 - **Documentation**: Document your code, your projects, your decisions. It will help you and your team.
   - Code sometimes can self-document, but it's not always the case.
@@ -112,7 +113,7 @@ Here's a few concepts of DevOps. For actual guide check the official documentati
 
 A DevOps team should not be a team that does everything, but a team that helps other teams to do everything.
 
-[YouTube - Devops is Terrible](https://youtu.be/qVEEpUvl0Kw?si=L_midxVRkJUN2JjX)
+[YouTube - DevOps is Terrible](https://youtu.be/qVEEpUvl0Kw?si=L_midxVRkJUN2JjX)
 
 ### Git
 
@@ -157,10 +158,11 @@ They can be used to:
 - Lint the code 
 - Test the code (TDD, BDD)
   - Unit tests [YouTube - Why I Don't Unit Test](https://youtu.be/ZGKGb109-I4?si=FQ41FGUuwLVZyht_)
+  - Mutation Tests
   - Integration Tests
   - End-to-End tests
+  - Smoke Tests
   - Performance Tests
-  - Mutation Tests
   - Regression Tests
   - Code Coverage ([YouTube - You should NOT focus on Code Coverage](https://youtu.be/WxoSoxVgyUw?si=nS73DZmbcw7SS5xx))
 - Check vulnerabilities
@@ -261,8 +263,8 @@ With the code above we can create a static website on Azure. The result is repro
 
 ### Monitoring and Alerting
 
-**Monitoring**: is the practice of observing the system to check its health and performance.
-**Alerting**: is the practice of sending notifications when something goes wrong.
+- **Monitoring**: is the practice of observing the system to check its health and performance.
+- **Alerting**: is the practice of sending notifications when something goes wrong.
 
 Ideally, you need to find the problem before the user does.
 
