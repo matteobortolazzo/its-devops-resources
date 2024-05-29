@@ -54,7 +54,7 @@ Here are some tools that can help you be faster:
 - **Keyboard**: Minimize the use of the mouse, they keyboard is faster, and you can do more with it.
   - **Mechanical keyboards**: They are more comfortable and better feedback [Great price/quality](https://www.keychron.com/)
   - **Touch typing**: It's faster than looking at the keyboard
-- **Linux**: It's faster than Windows if you know what you need to do
+- **Linux**: It's faster than Windows if you know what you need to do (or MacOS at least)
   - You can tailor it to your needs
   - Use tiling window managers like i3, Sway, Hyprland or PopOS
   - Distributions examples:
@@ -100,9 +100,9 @@ Here are some tools that can help you be faster:
   - Scrum is not the only way to be productive.
   - Don't spend all your time in meetings.
   - Run away from [SAFe](https://scaledagileframework.com/)
-  - Challenge the status quo.
   - [YouTube - The Agile Paradoxon](https://youtu.be/Bez7wmAsxjE?si=pJVrgVTJ8qCUoPKs)
   - [YouTube - The Expert](https://youtu.be/BKorP55Aqvg?si=ryEfSgHU253hyVkK)
+- **Challenge the status quo.**
 
 ## DevOps
 
