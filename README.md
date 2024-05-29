@@ -11,24 +11,15 @@ This is a small document to help you get started with modern DevOps practices an
 - **Simplify**: Once you know how to build complex things, strive to simplify them.
   - Don't use the latest technology just because it's new. Use it because it's better.
   - You don't need NoSQL, Microservices, or Kubernetes if you don't have a problem that needs them.
-  - [YouTube - Microservices](https://youtu.be/y8OnoxKotPQ?si=HBQx4jfZYX32jQNg
+  - [YouTube - Microservices](https://youtu.be/y8OnoxKotPQ?si=HBQx4jfZYX32jQNg)
+- **Security**: Always think about security. Data leaks and downtime are expesive, very.
+- **Documentation**: Document your code, your projects, your decisions. It will help you and your team.
+  - Code sometimes can self-document, but it's not always the case.
+  - [YouTube - Don't write comments](https://youtu.be/Bf7vDBBOBUA?si=IV2hkPYpUwFZ3YOk)
 - **Be nice**:
-  - Be nice to your colleagues, they are your best allies.
-  - Be humble, you don't know everything, and that's fine.
+  - Your colleques are your best allies.
+  - Be humble, you don't know everything, but still tell your opinion.
   - There's no perfect language, framework, or tool. Use the right tool for the job and skillset.
-- **Take care of your body** 
-  - Exercise and eat well, it's the only body you have.
-  - **Good Chair**: You will spend a lot of time on it.
-  - **Standing Desk**: It's better for your back. 
-  - **Alice/Split keyboard**: It's better for your wrists
-- **Fight Scrum**: Agile is great, Scrum is not. 
-  - Scrum is a tool, not a goal. 
-  - Scrum is not the only way to be Agile.
-  - Scrum is not the only way to be productive.
-  - Run away from [SAFe](https://scaledagileframework.com/)
-  - Challenge the status quo.
-  - [YouTube - The Agile Paradoxon](https://youtu.be/Bez7wmAsxjE?si=pJVrgVTJ8qCUoPKs)
-  - [YouTube - The Expert](https://youtu.be/BKorP55Aqvg?si=ryEfSgHU253hyVkK)
 
 ### Example projects
 
@@ -82,6 +73,7 @@ Here are some tools that can help you be faster:
 - **NeoVim** (When you mastered Vim motions)
   - From IDE to PDE (Personal Development Environment), you can make it work exactly as you want.
   - [YouTube - NeoVim Kickstart](https://www.youtube.com/watch?v=m8C0Cq9Uv9o)
+  > This is not perfect for every situation, it can replate easily VS Code, but not IntelliJ or Visual Studio for specific workflows.
 - **Tmux** (Multiple terminal "windows" in one terminal)
   - You can have multiple terminals in one terminal, create sessions, windows, panels, and more.
   - [YouTube - Tmux explained](https://youtu.be/niuOc02Rvrc?si=MOBA-YV9tC8yhN8z)
@@ -94,6 +86,23 @@ Here are some tools that can help you be faster:
 - [DevOps Toolbox](https://www.youtube.com/@devopstoolbox): Generic DevOps practices, Linux, development
 - [typecraft](https://www.youtube.com/@typecraft_dev): Generic development practices
 - YouTube will suggest you more channels based on your interests
+
+### Generic advices
+
+- **Take care of your body** 
+  - Exercise and eat well, it's the only body you have.
+  - **Good chair**: You will spend a lot of time on it.
+  - **Standing desk**: It's better for your back. 
+  - **Alice/Split keyboard**: It's better for your wrists
+- **Fight Scrum**: Agile is great, Scrum is not. 
+  - Scrum is a tool, not a goal. 
+  - Scrum is not the only way to be Agile.
+  - Scrum is not the only way to be productive.
+  - Don't spend all your time in meetings.
+  - Run away from [SAFe](https://scaledagileframework.com/)
+  - Challenge the status quo.
+  - [YouTube - The Agile Paradoxon](https://youtu.be/Bez7wmAsxjE?si=pJVrgVTJ8qCUoPKs)
+  - [YouTube - The Expert](https://youtu.be/BKorP55Aqvg?si=ryEfSgHU253hyVkK)
 
 ## DevOps
 
@@ -123,6 +132,7 @@ Git is a **distributed** version control system. It's the most used version cont
 
 - Pull request
 - Code review
+- Pair programming
 - Fork
 
 #### Services
@@ -152,7 +162,7 @@ They can be used to:
   - Performance Tests
   - Mutation Tests
   - Regression Tests
-  - Code Coverage
+  - Code Coverage ([YouTube - You should NOT focus on Code Coverage](https://youtu.be/WxoSoxVgyUw?si=nS73DZmbcw7SS5xx))
 - Check vulnerabilities
 - Check code quality
 - Check outdated dependencies
@@ -209,6 +219,7 @@ They just share the kernel with the host.
 - **Dockerfile**: A file with instructions to create an image
 - **Docker Composer**: A way to define and run multi-container Docker applications
 - **Registry**: A place to store and share images (Docker Hub, Azure Container Registry, GitHub Container Registry)
+- **ENV**: A way to pass environment variables to the container
 
 ### Infrastructure as Code
 
