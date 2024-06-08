@@ -283,3 +283,54 @@ Create queries on logs to:
 - Create reports
 
 You can use tools like *Prometheus*, *Grafana*, *Azure Monitor*, *AWS CloudWatch* to create dashboards and alerts.
+
+## Kubernetes
+
+It's a container orchestration platform. It's used to deploy, scale, and manage containers. It let us abstract the distribution of the containers, failover, scaling, and more.
+
+It works well with Microservices, but it's not the only way to do it.
+
+Everything is defined in a YAML file, and it's declarative. Most concepts are similar to [Docker Compose](https://docs.docker.com/compose/), but they are more complex.
+
+> Most companies don't need Kubernetes, but it's a good tool to know.
+
+### Basic Concepts
+
+- **Node**: A server that runs containers
+- **Cluster**: A set of nodes that run containerized applications
+- **Pod**: A group of one or more containers, smallest deployable unit
+- **Service**: A way to abstract a set of pods, load balance them, and more
+- **Deployment**: A way to deploy a pod, and manage its replicas
+- **Ingress**: A way to expose a service to the outside world. It can be used to route traffic, add SSL, and more
+- **Namespace**: A way to isolate resources, used to separate environments or tenants
+- **ConfigMap**: A way to store configuration
+- **Secret**: A way to store sensitive information
+- **Volume**: A way to persist data
+
+### Example
+
+[Documentation](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/)
+
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+  labels:
+    app: nginx
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:1.14.2
+        ports:
+        - containerPort: 80
+```
