@@ -284,6 +284,44 @@ Create queries on logs to:
 
 You can use tools like *Prometheus*, *Grafana*, *Azure Monitor*, *AWS CloudWatch* to create dashboards and alerts.
 
+#### Resource
+- [OpenTelemetry](https://opentelemetry.io/): A standard for collecting telemetry data
+- [Azure Monitor](https://learn.microsoft.com/en-us/azure/azure-monitor/overview)
+  - [Alerts](https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-overview)
+  - [Dashboard](https://learn.microsoft.com/en-us/azure/azure-monitor/visualize/tutorial-logs-dashboards)
+- [Analyze anomalies with KQL](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/kql-machine-learning-azure-monitor)
+
+## Azure App Security
+
+Security must be considered from the beginning. It's not something you can add later. A security breach can be very expensive or even fatal for a company.
+
+## Azure KeyVault
+
+**NEVER STORE KEYS IN THE REPOSITORY**
+
+Azure KeyVault is a way to store secrets, certificates, and keys. It's a secure way to store sensitive information.
+
+For example:
+- Connection strings
+- API keys
+- Signing Certificates
+- SSH keys
+
+> Remember secrets should be rotated, and they should have a limited scope.
+
+## Azure Entra ID
+
+It's a way to manage access to resources. Both users and services can have an identity. It was called *Azure Active Directory* before.
+
+If a service like a WebApp needs to access a database, it can use its identity to authenticate instead of a connection string. It is more secure and easier to manage.
+
+### Concepts
+
+- **Managed Identity**: A way to identify a user or a service. [List of available services](https://learn.microsoft.com/en-us/entra/identity/managed-identities-azure-resources/managed-identities-status)
+- **Role-based access control (RBAC)**: A way to manage access to resources based on roles. [What is RBAC](https://learn.microsoft.com/en-us/azure/role-based-access-control/overview)
+- **Azure Policy**: A way to enforce rules and standards on resources. [What is Azure Policy](https://learn.microsoft.com/en-us/azure/governance/policy/overview)
+- [Using Managed Service Identity (MSI) to authenticate on Azure SQL DB](https://techcommunity.microsoft.com/t5/azure-database-support-blog/using-managed-service-identity-msi-to-authenticate-on-azure-sql/ba-p/1288248)
+
 ## Kubernetes
 
 It's a container orchestration platform. It's used to deploy, scale, and manage containers. It let us abstract the distribution of the containers, failover, scaling, and more.
@@ -334,3 +372,16 @@ spec:
         ports:
         - containerPort: 80
 ```
+
+## Helm
+
+Helm is a package manager for *Kubernetes*. It's used to define, install, and upgrade *Kubernetes* applications.
+
+It's like *Nuget* or *NPM* for Kubernetes.
+
+### Concepts
+
+- **Chart**: A package of pre-configured Kubernetes resources
+- **Repository**: A place to store and share charts
+- **Release**: A specific version of a chart
+- **Values**: A way to customize a chart
