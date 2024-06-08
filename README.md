@@ -291,11 +291,11 @@ You can use tools like *Prometheus*, *Grafana*, *Azure Monitor*, *AWS CloudWatch
   - [Dashboard](https://learn.microsoft.com/en-us/azure/azure-monitor/visualize/tutorial-logs-dashboards)
 - [Analyze anomalies with KQL](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/kql-machine-learning-azure-monitor)
 
-## Azure App Security
+## App security on Azure 
 
 Security must be considered from the beginning. It's not something you can add later. A security breach can be very expensive or even fatal for a company.
 
-## Azure KeyVault
+### Azure KeyVault
 
 **NEVER STORE KEYS IN THE REPOSITORY**
 
@@ -309,13 +309,13 @@ For example:
 
 > Remember secrets should be rotated, and they should have a limited scope.
 
-## Azure Entra ID
+### Azure Entra ID
 
 It's a way to manage access to resources. Both users and services can have an identity. It was called *Azure Active Directory* before.
 
 If a service like a WebApp needs to access a database, it can use its identity to authenticate instead of a connection string. It is more secure and easier to manage.
 
-### Concepts
+#### Concepts
 
 - **Managed Identity**: A way to identify a user or a service. [List of available services](https://learn.microsoft.com/en-us/entra/identity/managed-identities-azure-resources/managed-identities-status)
 - **Role-based access control (RBAC)**: A way to manage access to resources based on roles. [What is RBAC](https://learn.microsoft.com/en-us/azure/role-based-access-control/overview)
