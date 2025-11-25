@@ -1,0 +1,25 @@
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "src/pokebattle-api/**"
+      - ".github/workflows/api-deploy.yml"
+  pull_request:
+    branches:
+      - main
+    paths:
+      - "src/pokebattle-api/**"
+      - ".github/workflows/api-deploy.yml"
+
+jobs:
+  reuse-deploy-workflow:
+    uses: ./.github/workflows/app-service-container-deploy.yml
+    with:
+      project_folder: pokebattle-api
+      azure_webapp_name: pokebattle-api
+    secrets:
+      container_registry: ${{ secrets.REGISTRY_URL }}
+      registry_username: ${{ secrets.REGISTRY_USERNAME }}
+      registry_password: ${{ secrets.REGISTRY_PASSWORD }}
+      azure_credentials: ${{ secrets.AZURE_CREDENTIALS }}

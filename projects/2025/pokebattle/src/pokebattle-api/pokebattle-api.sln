@@ -1,0 +1,59 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.0.0
+MinimumVisualStudioVersion = 17.8.0.0
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "pokebattle-api.AppHost", "pokebattle-api.AppHost\pokebattle-api.AppHost.csproj", "{93E254BE-5B4E-4508-B06D-249A752CB3FA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "pokebattle-api.ServiceDefaults", "pokebattle-api.ServiceDefaults\pokebattle-api.ServiceDefaults.csproj", "{48D007FF-6B7F-43BC-8B9C-D09788C69B11}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "pokebattle-api.ApiService", "pokebattle-api.ApiService\pokebattle-api.ApiService.csproj", "{DD3D74B1-245B-41C2-BE8E-E1D9A76DE6AC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "pokebattle-api.Web", "pokebattle-api.Web\pokebattle-api.Web.csproj", "{7855E237-D54F-4632-8715-8DDF019138A7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pokebattle.UnitTests", "Pokebattle.UnitTests\Pokebattle.UnitTests.csproj", "{F8A58706-8AAC-4449-AFF6-F5ED3773A406}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionFolder", "SolutionFolder", "{F9176ECC-EEC8-4180-AD97-E0F8BEA370A7}"
+	ProjectSection(SolutionItems) = preProject
+		Dockerfile = Dockerfile
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PokeBattle.ML", "PokeBattle.ML\PokeBattle.ML.csproj", "{2703C965-A0D9-4801-8DAD-5FEF9FB5FB3B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{93E254BE-5B4E-4508-B06D-249A752CB3FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93E254BE-5B4E-4508-B06D-249A752CB3FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93E254BE-5B4E-4508-B06D-249A752CB3FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93E254BE-5B4E-4508-B06D-249A752CB3FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48D007FF-6B7F-43BC-8B9C-D09788C69B11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48D007FF-6B7F-43BC-8B9C-D09788C69B11}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48D007FF-6B7F-43BC-8B9C-D09788C69B11}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48D007FF-6B7F-43BC-8B9C-D09788C69B11}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD3D74B1-245B-41C2-BE8E-E1D9A76DE6AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD3D74B1-245B-41C2-BE8E-E1D9A76DE6AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD3D74B1-245B-41C2-BE8E-E1D9A76DE6AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD3D74B1-245B-41C2-BE8E-E1D9A76DE6AC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7855E237-D54F-4632-8715-8DDF019138A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7855E237-D54F-4632-8715-8DDF019138A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7855E237-D54F-4632-8715-8DDF019138A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7855E237-D54F-4632-8715-8DDF019138A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F8A58706-8AAC-4449-AFF6-F5ED3773A406}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8A58706-8AAC-4449-AFF6-F5ED3773A406}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8A58706-8AAC-4449-AFF6-F5ED3773A406}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8A58706-8AAC-4449-AFF6-F5ED3773A406}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2703C965-A0D9-4801-8DAD-5FEF9FB5FB3B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2703C965-A0D9-4801-8DAD-5FEF9FB5FB3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2703C965-A0D9-4801-8DAD-5FEF9FB5FB3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2703C965-A0D9-4801-8DAD-5FEF9FB5FB3B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {87C01476-13D2-4046-B1FC-0884A2C754FF}
+	EndGlobalSection
+EndGlobal

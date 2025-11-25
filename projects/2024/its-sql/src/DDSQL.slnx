@@ -1,0 +1,9 @@
+﻿<Solution>
+  <Folder Name="/SolutionFiles/">
+    <File Path="..\README.md" />
+    <File Path="..\compose.yml" />
+  </Folder>
+  <Project Path="Engine\Engine.csproj" Type="Classic C#" />
+  <Project Path="Gateway\Gateway.csproj" Type="Classic C#" />
+  <Project Path="Shared\Shared.csproj" Type="Classic C#" />
+</Solution>

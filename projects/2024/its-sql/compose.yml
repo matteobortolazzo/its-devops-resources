@@ -1,0 +1,27 @@
+networks:
+  ddsql_network:
+    name: ddsql_network
+    driver: bridge
+    
+volumes:
+  ddsql_gateway_data:
+    name: ddsql_gateway_data
+    driver: local
+
+services:
+  gateway:
+    user: root
+    build:
+      context: .
+      dockerfile: src/Gateway/Dockerfile
+    image: ddsql_gateway
+    container_name: ddsql_gateway
+    networks:
+      - ddsql_network
+    ports:
+      - "8080:8080"
+    environment:
+      - DOCKER_HOST=unix:///var/run/docker.sock
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ddsql_gateway_data:/etc/data

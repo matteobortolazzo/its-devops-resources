@@ -1,0 +1,35 @@
+services:
+  api:
+    build: ./src/gitmess-api
+    container_name: gitmess-api
+    volumes:
+      - git-repos:/data/git/repositories
+    networks:
+      - gitnet
+
+  frontend:
+    build: ./src/gitmess-ui
+    container_name: gitmess-frontend
+    ports:
+      - "3001:3001"
+    networks:
+      - gitnet
+    depends_on:
+      - api
+
+  git-server:
+    build: ./src/gitmess-gitserver/
+    container_name: gitmess-gitserver
+    volumes:
+      - git-repos:/data/git/repositories
+    ports:
+      - "2222:22"
+    depends_on:
+      - frontend
+
+volumes:
+  git-repos:
+
+networks:
+  gitnet:
+    driver: bridge

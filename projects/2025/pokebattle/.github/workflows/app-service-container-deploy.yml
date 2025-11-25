@@ -1,0 +1,49 @@
+on:
+  workflow_call:
+    inputs:
+      project_folder:
+        required: true
+        type: string
+      azure_webapp_name:
+        required: true
+        type: string
+    secrets:
+      container_registry:
+        required: true
+      registry_username:
+        required: true
+      registry_password:
+        required: true
+      azure_credentials:
+        required: true
+
+jobs:
+  build-and-deploy-to-dev:
+    runs-on: ubuntu-latest
+    environment: dev
+    steps:
+      - uses: actions/checkout@v3
+      - name: Azure authentication
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.azure_credentials }}
+      - name: ACR authentication
+        uses: azure/docker-login@v1
+        with:
+          login-server: ${{ secrets.container_registry }}
+          username: ${{ secrets.registry_username }}
+          password: ${{ secrets.registry_password }}
+      - name: Docker Build
+        run: |
+          cd src/${{ inputs.project_folder }}
+          docker build . -t ${{ secrets.container_registry }}/${{ inputs.azure_webapp_name }}:${{ github.sha }}
+      - name: Push to ACR
+        if: github.event_name != 'pull_request'
+        run: |
+          docker push ${{ secrets.container_registry }}/${{ inputs.azure_webapp_name }}:${{ github.sha }}
+      - name: "Deploy to Azure Web App for Container"
+        if: github.event_name != 'pull_request'
+        uses: azure/webapps-deploy@v2
+        with:
+          app-name: ${{ inputs.azure_webapp_name }}
+          images: ${{ secrets.container_registry }}/${{ inputs.azure_webapp_name }}:${{ github.sha }}
