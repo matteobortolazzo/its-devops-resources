@@ -25,21 +25,19 @@ This is a small document to help you get started with modern DevOps and AI pract
 
 ## How to be a good engineer
 
-- **Be curious**: Always be curious about how things work. Use *YouTube* and *Twitter* and follow people and projects.
+- **Be curious**: Always be curious about how things work. Use *YouTube* (examples later), *Reddit*, *X*; follow people and projects.
 - **Challenge yourself**: Build complex projects and solve complex problems.
 - **Simplify**: Once you know how to build complex things, strive to simplify them.
     - Don't use the latest technology just because it's new. Use it because it's better.
     - You don't need NoSQL, Microservices, or Kubernetes if you don't have a problem that needs them.
     - [YouTube - Microservices](https://youtu.be/y8OnoxKotPQ?si=HBQx4jfZYX32jQNg)
 - **Work iteratively**: Don't try to build everything at once. Build small parts and iterate on them.
-- **Security**: Always think about security. Data leaks and downtime are expesive, very.
+- **Security**: Always think about security. Data leaks and downtime are expensive, very expensive.
 - **Documentation**: Document your code, your projects, your decisions. It will help you and your team.
     - Code sometimes can self-document, but it's not always the case.
     - [YouTube - Don't write comments](https://youtu.be/Bf7vDBBOBUA?si=IV2hkPYpUwFZ3YOk)
-- **Be nice**:
-    - Your colleques are your best allies.
-    - Be humble, you don't know everything, but still tell your opinion.
-    - There's no perfect language, framework, or tool. Use the right tool for the job and skillset.
+- **Tooling**:
+    - There's no perfect language, framework, or tool. Use the right tool for the job and skill-set.
 
 ### Example projects
 
@@ -68,7 +66,7 @@ This is a small document to help you get started with modern DevOps and AI pract
 
 Be a good engineer doesn't mean to be fast. Your brain is more important than your hands.
 
-HOWEVER, if you are also fast, it's better. If you are fast you won't experience those micro context switches that slow you down and you can just type as the speed of thought.
+HOWEVER, if you are also fast, it's better. If you are fast you won't experience those micro context switches that slow you down, and you can just type as the speed of thought.
 
 Here are some tools that can help you be faster:
 - **Keyboard**: Minimize the use of the mouse, they keyboard is faster, and you can do more with it.
@@ -100,26 +98,24 @@ Here are some tools that can help you be faster:
 
 ### YouTube channels
 
-- [Primeagen](https://www.youtube.com/@ThePrimeagen): Generic programming tips, Vim, Tmux, and more
-- [Theo](https://www.youtube.com/@t3dotgg): Javascript, React, Node, and more
+- [Salvatore Sanfilippo](https://www.youtube.com/@antirez): AI, C, general discussion
 - [MorroLinux](https://www.youtube.com/@morrolinux): Linux (ITA)
-- [DevOps Toolbox](https://www.youtube.com/@devopstoolbox): Generic DevOps practices, Linux, development
+- [Matthew Coder](https://www.youtube.com/@MatthewCoder): Game DEV (ITA)
 - [typecraft](https://www.youtube.com/@typecraft_dev): Generic development practices
+- [DevOps Toolbox](https://www.youtube.com/@devopstoolbox): Generic DevOps practices, Linux, development
+- [Primeagen](https://www.youtube.com/@ThePrimeagen): Generic programming tips, Vim, Tmux, and more
 - YouTube will suggest you more channels based on your interests
 
 ### Generic advices
 
-- **Take care of your body**
+- **Take care of yourself**
     - Exercise and eat well, it's the only body you have.
     - **Good chair**: You will spend a lot of time on it.
     - **Standing desk**: It's better for your back.
     - **Alice/Split keyboard**: It's better for your wrists
 - **Fight Scrum**: Agile is great, Scrum is not.
-    - Scrum is a tool, not a goal.
-    - Scrum is not the only way to be Agile.
-    - Scrum is not the only way to be productive.
     - Don't spend all your time in meetings.
-    - Run away from [SAFe](https://scaledagileframework.com/)
     - [YouTube - The Agile Paradoxon](https://youtu.be/Bez7wmAsxjE?si=pJVrgVTJ8qCUoPKs)
     - [YouTube - The Expert](https://youtu.be/BKorP55Aqvg?si=ryEfSgHU253hyVkK)
-- **Challenge the status quo.**
+- [YouTube - La AI penalizza le assunzioni dei programmatori junior a favore dei senior?](https://youtu.be/dBt5u19GpKc?si=SdcMP17-O6AvejZZ)
+- [YouTube - Quello da non fare mai quando si programma con l'AI](https://youtu.be/cc86dChauDE?si=tqc7paXyFZh0wi-A)
