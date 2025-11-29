@@ -4,6 +4,21 @@
 
 AI/ML is not a single tool, it’s a **workflow**: data → model → evaluation → iteration → deployment → monitoring.
 
+## Resources
+
+Models, datasets and more can be found at:
+- [Hugging Face](https://huggingface.co/)
+- [Kaggle Datasets](https://www.kaggle.com/datasets)
+
+Interesting YouTube videos:
+- [All ML algorithms in 17 mins](https://youtu.be/E0Hmnixke2g?si=WVieIuKfKb68KaAu)
+- [But what is a neural network?](https://youtu.be/aircAruvnKk?si=rXaZCLX75Dci7F9_)
+- [PyTorch in 1 Hour](https://youtu.be/r1bquDz5GGA?si=EhhiN1hCs566DD7u)
+
+
+- [Training AI to Play Pokemon with Reinforcement Learning](https://youtu.be/DcYLT37ImBY?si=0ZEOnSCn6-1pcMzP)
+- [I Trapped this AI Centipede in a Simulation for 1000 Years](https://youtu.be/oFqwcngsts8?si=250WYPcEyYHSJMn2)
+
 ## What is a model
 
 A model is a function that maps **inputs** to **outputs**.
