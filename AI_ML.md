@@ -211,6 +211,36 @@ Helpful tooling:
 - AutoML for automatic multi-model evaluations
 - CLI tooling
 
+## Reinforcement Learning (RL)
+
+**Reinforcement Learning** is a paradigm where an **agent** learns to make decisions by interacting with an **environment**, receiving **rewards** or **penalties** for its actions, and aiming to maximize cumulative reward over time.
+
+### Core concepts
+
+- **Agent**: the learner/decision-maker
+- **Environment**: the world the agent interacts with
+- **State (s)**: the current situation the agent observes
+- **Action (a)**: what the agent can do
+- **Reward (r)**: feedback signal (positive or negative)
+- **Policy (π)**: the strategy mapping states to actions
+- **Value function (V)**: expected cumulative reward from a state
+- **Q-function (Q)**: expected cumulative reward from a state-action pair
+
+### The RL loop
+
+1. Agent observes **state** from environment
+2. Agent takes **action** according to its policy
+3. Environment returns **reward** and next **state**
+4. Agent updates its policy/value estimates based on the reward signal
+5. Repeat until episode ends or convergence
+
+### Common applications
+
+- Game AI (Atari, Go, game playing)
+- Robotics (control, manipulation)
+- Autonomous systems (navigation, resource allocation)
+- Recommendation systems (sequential decision-making)
+
 ## Neural Networks
 
 A **neural network** is basically a **configurable calculator**: you feed numbers in, it runs them through a bunch of simple math steps, and it outputs numbers.

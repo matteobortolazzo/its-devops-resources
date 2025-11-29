@@ -179,6 +179,19 @@ Create queries on logs to:
 
 You can use tools like *Prometheus*, *Grafana*, *Azure Monitor*, *AWS CloudWatch* to create dashboards and alerts.
 
+### Open Telemetry
+
+OpenTelemetry is a set of APIs, SDKs, and tools for collecting, processing, and exporting telemetry data (metrics, logs, and traces) from your applications. 
+It provides a vendor-neutral standard for observability.
+
+#### Key Concepts
+
+- **Traces**: Track requests through your system to understand latency and dependencies
+- **Metrics**: Collect numerical measurements about your application (e.g., request count, latency, CPU usage)
+- **Logs**: Structured logging with context and correlation IDs
+- **Spans**: Individual operations within a trace
+- **Exporters**: Send telemetry data to backends (Jaeger, Zipkin, Azure Monitor, DataDog, etc.)
+
 #### Resource
 - [OpenTelemetry](https://opentelemetry.io/): A standard for collecting telemetry data
 - [Azure Monitor](https://learn.microsoft.com/en-us/azure/azure-monitor/overview)
