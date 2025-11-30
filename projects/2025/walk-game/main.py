@@ -2,10 +2,22 @@ import matplotlib.pyplot as plt
 import torch
 
 from environment import Action
+from model import PolicyNet
 from renderer import GridWorldRenderer
 from training.supervised import train_supervised
 from training.evolution import train_evolution
 from training.reinforce_learning import train_reinforce_learning
+
+def save_model(model, path="model.pth"):
+    torch.save(model.state_dict(), path)
+    print(f"Model saved to {path}")
+
+def load_model(path="model.pth"):
+    model = PolicyNet()
+    model.load_state_dict(torch.load(path))
+    model.eval()
+    print(f"Model loaded from {path}")
+    return model
 
 def demo_run(env, model, max_steps=20, render=True):
     print("\n=== Demo run ===")
