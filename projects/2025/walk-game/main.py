@@ -1,8 +1,8 @@
 import matplotlib.pyplot as plt
 import torch
 
-from environment import Action
-from model import PolicyNet
+from environment import Action, GridWorld
+from model import WalkBrain
 from renderer import GridWorldRenderer
 from training.supervised import train_supervised
 from training.evolution import train_evolution
@@ -13,13 +13,13 @@ def save_model(model, path="model.pth"):
     print(f"Model saved to {path}")
 
 def load_model(path="model.pth"):
-    model = PolicyNet()
+    model = WalkBrain()
     model.load_state_dict(torch.load(path))
     model.eval()
     print(f"Model loaded from {path}")
     return model
 
-def demo_run(env, model, max_steps=20, render=True):
+def demo_run(env, model, max_steps=25, render=True):
     print("\n=== Demo run ===")
     renderer = GridWorldRenderer(env) if render else None
 
@@ -61,13 +61,14 @@ def demo_run(env, model, max_steps=20, render=True):
 if __name__ == "__main__":
     # Choose one: "spv", "evo", "rl"
     mode = "evo"
+    env = GridWorld()
 
     if mode == "spv":
-        env, model = train_supervised()
+        env, model = train_supervised(env)
     elif mode == "evo":
-        env, model = train_evolution()
+        env, model = train_evolution(env)
     elif mode == "rl":
-        env, model = train_reinforce_learning()
+        env, model = train_reinforce_learning(env)
 
     else:
         raise ValueError("Unknown mode")

@@ -16,11 +16,11 @@ class GridWorld:
     Actions: 0=up,1=down,2=left,3=right
     """
 
-    def __init__(self, size=5):
+    def __init__(self, size=5, goal=(4,4), lava=(2,2)):
         self.pos = (0, 0)
         self.size = size
-        self.goal = (size - 1, size - 1)
-        self.lava = (2, 2)
+        self.goal = goal
+        self.lava = lava
         self.reset()
 
     def reset(self):

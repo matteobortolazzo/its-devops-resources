@@ -1,7 +1,8 @@
 import torch
 import torch.optim as optim
 from environment import GridWorld, Action
-from model import PolicyNet, BigPolicyNet
+from model import WalkBrain
+
 
 def run_episode_reinforce(env, model, max_steps=50, gamma=0.99, entropy_coef=0.01):
     log_probs = []
@@ -55,10 +56,9 @@ def run_episode_reinforce(env, model, max_steps=50, gamma=0.99, entropy_coef=0.0
     return loss, total_reward
 
 
-def train_reinforce_learning():
+def train_reinforce_learning(env):
     print("=== Reinforcement Learning (REINFORCE) ===")
-    env = GridWorld()
-    model = BigPolicyNet() # PolicyNet()
+    model = WalkBrain()
     opt = optim.Adam(model.parameters(), lr=3e-3) # Standard optimizer with 0.01 learning rate
 
     # Track running average for monitoring

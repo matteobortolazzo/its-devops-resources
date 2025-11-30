@@ -2,7 +2,7 @@ import copy
 import numpy as np
 import torch
 from environment import GridWorld, Action
-from model import PolicyNet
+from model import WalkBrain
 
 def evaluate_policy(env, model, episodes=5, max_steps=50):
     total = 0.0
@@ -31,15 +31,14 @@ def mutate(model, sigma=0.1):
             p.add_(sigma * torch.randn_like(p))
     return child
 
-def train_evolution():
+def train_evolution(env, hidden=32):
     print("=== Neuroevolution ===")
-    env = GridWorld()
     pop_size = 20
     elite_frac = 0.2
     sigma = 0.1
     generations = 50
 
-    population = [PolicyNet() for _ in range(pop_size)]
+    population = [(WalkBrain(hidden=hidden)) for _ in range(pop_size)]
 
     for gen in range(generations):
         fitnesses = [evaluate_policy(env, ind) for ind in population]

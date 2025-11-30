@@ -3,7 +3,7 @@ import torch
 import torch.nn as nn
 import torch.optim as optim
 from environment import GridWorld, Action
-from model import PolicyNet
+from model import WalkBrain
 
 def expert_action(state, env: GridWorld):
     """
@@ -72,14 +72,13 @@ def generate_supervised_data(env, n_samples=500):
     return np.stack(X), np.array(y, dtype=np.int64) # PyTorch needs int64 for targets
 
 
-def train_supervised():
+def train_supervised(env):
     print("=== Supervised Learning ===")
-    env = GridWorld()
     X, y = generate_supervised_data(env)
     X_t = torch.from_numpy(X) # Convert X to PyTorch tensor
     y_t = torch.from_numpy(y) # Convert Y to PyTorch tensor
 
-    model = PolicyNet()
+    model = WalkBrain()
     opt = optim.Adam(model.parameters(), lr=1e-2) # Standard optimizer with 0.01 learning rate
     loss_fn = nn.CrossEntropyLoss() # Standard loss function for classification (0,1,2,3)
 
