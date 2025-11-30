@@ -1,9 +1,18 @@
+from enum import Enum
 import copy
 import numpy as np
 import torch
 import torch.nn as nn
 import torch.optim as optim
+import matplotlib.pyplot as plt
+import matplotlib
+matplotlib.use("TkAgg")
 
+class Action(Enum):
+    UP = 0
+    DOWN = 1
+    LEFT = 2
+    RIGHT = 3
 
 # ---------------------------
 # Environment: 5x5 GridWorld
@@ -39,14 +48,13 @@ class GridWorld:
     def step(self, action):
         x, y = self.pos
 
-        # 0=up,1=down,2=left,3=right
-        if action == 0 and y > 0:
-            y -= 1
-        elif action == 1 and y < self.size - 1:
+        if action == Action.UP and y < self.size - 1:
             y += 1
-        elif action == 2 and x > 0:
+        elif action == Action.DOWN and y > 0:
+            y -= 1
+        elif action == Action.LEFT and x > 0:
             x -= 1
-        elif action == 3 and x < self.size - 1:
+        elif action == Action.RIGHT  and x < self.size - 1:
             x += 1
 
         self.pos = (x, y)
@@ -62,6 +70,67 @@ class GridWorld:
             done = True
 
         return self.get_state(), reward, done, {}
+
+# ---------------------------
+# Renderer for the environment
+# ---------------------------
+class GridWorldRenderer:
+    def __init__(self, env):
+        self.env = env
+        self.size = env.size
+
+        plt.ion()
+        self.fig, self.ax = plt.subplots()
+
+        # Grid aligns with cell edges
+        self.ax.set_xlim(-0.5, self.size - 0.5)
+        self.ax.set_ylim(-0.5, self.size - 0.5)
+
+        # Cell boundary grid lines
+        self.ax.set_xticks(np.arange(-0.5, self.size, 1))
+        self.ax.set_yticks(np.arange(-0.5, self.size, 1))
+        self.ax.grid(True, which="major", linewidth=0.5, color="gray")
+
+        # Hide tick labels
+        self.ax.tick_params(which="major", bottom=False, left=False,
+                            labelbottom=False, labelleft=False)
+
+        self.img = None
+        self.agent_scatter = None
+
+    def _build_grid(self):
+        grid = np.zeros((self.size, self.size), dtype=np.int32)
+        lx, ly = self.env.lava
+        gx, gy = self.env.goal
+        grid[ly, lx] = 1
+        grid[gy, gx] = 2
+        return grid
+
+    def draw(self):
+        grid = self._build_grid()
+
+        from matplotlib.colors import ListedColormap
+        cmap = ListedColormap(["white", "red", "green"])
+
+        if self.img is None:
+            self.img = self.ax.imshow(
+                grid,
+                cmap=cmap,
+                vmin=0,
+                vmax=2,
+                origin="lower",
+                interpolation="none",
+                extent=(-0.5, self.size - 0.5, -0.5, self.size - 0.5),
+            )
+            self.agent_scatter = self.ax.scatter([], [], s=200, color="blue")
+        else:
+            self.img.set_data(grid)
+
+        ax, ay = self.env.pos
+        self.agent_scatter.set_offsets([[ax, ay]])
+
+        self.fig.canvas.draw()
+        plt.pause(0.25)
 
 
 # -----------------------------------------
@@ -100,15 +169,15 @@ def expert_action(state, env: GridWorld):
 
     # Try to reduce x distance to goal
     if x < goal_x:
-        possible_actions.append(3)  # right
+        possible_actions.append(Action.RIGHT)
     elif x > goal_x:
-        possible_actions.append(2)  # left
+        possible_actions.append(Action.LEFT)
 
     # Try to reduce y distance to goal
     if y < goal_y:
-        possible_actions.append(1)  # down
+        possible_actions.append(Action.UP)
     elif y > goal_y:
-        possible_actions.append(0)  # up
+        possible_actions.append(Action.DOWN)
 
     if not possible_actions:
         possible_actions = [0]  # arbitrary, already at goal
@@ -116,13 +185,13 @@ def expert_action(state, env: GridWorld):
     # Avoid stepping into the lava, if possible
     for action in possible_actions:
         next_x, next_y = x, y
-        if action == 0:
-            next_y -= 1
-        elif action == 1:
+        if action == Action.UP:
             next_y += 1
-        elif action == 2:
+        elif action == Action.DOWN:
+            next_y -= 1
+        elif action == Action.LEFT:
             next_x -= 1
-        elif action == 3:
+        elif action == Action.RIGHT:
             next_x += 1
         if (next_x, next_y) != (lava_x, lava_y):
             return action
@@ -143,7 +212,8 @@ def generate_supervised_data(env, n_samples=500):
         state = env.get_state()
         action = expert_action(state, env)
         X.append(state)
-        y.append(action)
+        y.append(action.value)
+
     # X (N x array(6)) is converted to matrix(N, 6)
     # y (N x int) is converted to array(N)
     return np.stack(X), np.array(y, dtype=np.int64) # PyTorch needs int64 for targets
@@ -314,33 +384,48 @@ def train_evolution():
 # -----------------------------------------
 # Simple rollout viewer
 # -----------------------------------------
-def demo_run(env, model, max_steps=20):
+def demo_run(env, model, max_steps=20, render=True):
     print("\n=== Demo run ===")
+    renderer = GridWorldRenderer(env) if render else None
+
     state = env.reset()
     total_reward = 0.0
+
+    if renderer is not None:
+        renderer.draw()
+
     for step in range(max_steps):
         s_t = (torch
                .from_numpy(state) # Convert state to PyTorch tensor and
                .unsqueeze(0)) # Add batch dimension (how many samples to process at once)
         with torch.no_grad(): # Disable autograd to speed up inference
             logits = model(s_t) # Run the model
-            action = torch.argmax(logits, dim=-1).item() # Choose action with the highest probability
+            action_index = torch.argmax(logits, dim=-1).item() # Choose action with the highest probability
+            action = Action(action_index) # Convert index to enum
+
         state, reward, done, _ = env.step(action) # Execute the action
         total_reward += reward
 
-        size = env.size
-        x = int(round(state[0] * (size - 1)))
-        y = int(round(state[1] * (size - 1)))
+        x, y = env.pos
         print(f"Step {step:2d}: pos=({x},{y})  reward={reward:.2f}")
+
+        if renderer is not None:
+            renderer.draw()
 
         if done:
             break
+
     print("Total reward:", total_reward)
+    # keep the window open at the end
+    if render:
+        print("Close the matplotlib window to continue.")
+        plt.ioff()
+        plt.show()
 
 
 if __name__ == "__main__":
     # Choose one: "supervised", "rl", "evo"
-    mode = "rl"
+    mode = "supervised"
 
     if mode == "supervised":
         env, model = train_supervised()
