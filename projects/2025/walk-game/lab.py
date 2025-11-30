@@ -88,6 +88,7 @@ def expert_action(state, env: GridWorld):
     Simple heuristic expert:
     - Move towards goal (4,4)
     - Avoid stepping into lava (2,2) if possible
+    - Actions: 0=up,1=down,2=left,3=right
     """
     size = env.size
     x = int(round(state[0] * (size - 1))) # From float back to int
@@ -105,9 +106,9 @@ def expert_action(state, env: GridWorld):
 
     # Try to reduce y distance to goal
     if y < goal_y:
-        possible_actions.append(0)  # up
-    elif y > goal_y:
         possible_actions.append(1)  # down
+    elif y > goal_y:
+        possible_actions.append(0)  # up
 
     if not possible_actions:
         possible_actions = [0]  # arbitrary, already at goal
@@ -116,9 +117,9 @@ def expert_action(state, env: GridWorld):
     for action in possible_actions:
         next_x, next_y = x, y
         if action == 0:
-            next_y += 1
-        elif action == 1:
             next_y -= 1
+        elif action == 1:
+            next_y += 1
         elif action == 2:
             next_x -= 1
         elif action == 3:
