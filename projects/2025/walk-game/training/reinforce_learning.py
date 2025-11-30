@@ -12,7 +12,7 @@ def run_episode_reinforce(env, model, max_steps=50, gamma=0.99):
     for t in range(max_steps): # t is just a step counter
         s_t = torch.from_numpy(state).unsqueeze(0)
         logits = model(s_t) # Run the model
-        probs = torch.softmax(logits, dim=-1) # Convert logits to probabilities (the sum is 1)
+        probs = torch.softmax(logits, dim=-1) # Get probabilities for each action
         dist = torch.distributions.Categorical(probs) # Wrap them in a distribution to have sample() and log_prob() methods
 
         action = dist.sample()

@@ -37,6 +37,7 @@ class GridWorld:
 
     def step(self, action):
         x, y = self.pos
+        x_old, y_old = x, y
 
         if action == Action.UP and y < self.size - 1:
             y += 1
@@ -44,19 +45,28 @@ class GridWorld:
             y -= 1
         elif action == Action.LEFT and x > 0:
             x -= 1
-        elif action == Action.RIGHT  and x < self.size - 1:
+        elif action == Action.RIGHT and x < self.size - 1:
             x += 1
 
+        moved = (x != x_old or y != y_old)
         self.pos = (x, y)
 
-        reward = -0.01  # small step penalty
+        # Distance-based reward
+        old_dist = abs(x_old - self.goal[0]) + abs(y_old - self.goal[1])
+        new_dist = abs(x - self.goal[0]) + abs(y - self.goal[1])
+
+        if not moved:
+            reward = -0.5
+        else:
+            reward = 0.1 * (old_dist - new_dist) - 0.01
+
         done = False
 
         if self.pos == self.lava:
-            reward = -1.0
+            reward = -5.0
             done = True
         elif self.pos == self.goal:
-            reward = 1.0
+            reward = 10.0
             done = True
 
         return self.get_state(), reward, done, {}

@@ -12,8 +12,8 @@ def evaluate_policy(env, model, episodes=5, max_steps=50):
         for _ in range(max_steps):
             s_t = torch.from_numpy(state).unsqueeze(0)
             with torch.no_grad():
-                logits = model(s_t)
-                action_index = torch.argmax(logits, dim=-1).item()
+                logits = model(s_t) # Run the model
+                action_index = torch.argmax(logits, dim=-1).item() # Choose action with the highest probability
                 action = Action(action_index)
             state, reward, done, _ = env.step(action)
             ep_reward += reward

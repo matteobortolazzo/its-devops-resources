@@ -48,7 +48,7 @@ def demo_run(env, model, max_steps=20, render=True):
 
 if __name__ == "__main__":
     # Choose one: "spv", "evo", "rl"
-    mode = "evo"
+    mode = "rl"
 
     if mode == "spv":
         env, model = train_supervised()
