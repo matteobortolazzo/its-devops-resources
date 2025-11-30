@@ -1,13 +1,12 @@
-import matplotlib
 import matplotlib.pyplot as plt
 import torch
 
 from environment import Action
 from renderer import GridWorldRenderer
-from training.evo import train_evolution
-from training.rl import train_reinforce
 from training.supervised import train_supervised
-
+from training.evolution import train_evolution
+from training.reinforce_learning import train_reinforce_learning
+from training.actor_critic import train_actor_critic
 
 def demo_run(env, model, max_steps=20, render=True):
     print("\n=== Demo run ===")
@@ -49,15 +48,18 @@ def demo_run(env, model, max_steps=20, render=True):
 
 
 if __name__ == "__main__":
-    # Choose one: "supervised", "rl", "evo"
+    # Choose one: "spv", "evo", "rl", "actor"
     mode = "supervised"
 
-    if mode == "supervised":
+    if mode == "spv":
         env, model = train_supervised()
-    elif mode == "rl":
-        env, model = train_reinforce()
     elif mode == "evo":
         env, model = train_evolution()
+    elif mode == "rl":
+        env, model = train_reinforce_learning()
+    elif mode == "actor":
+        env, model = train_actor_critic()
+
     else:
         raise ValueError("Unknown mode")
 

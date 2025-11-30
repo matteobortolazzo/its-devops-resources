@@ -48,7 +48,7 @@ def run_episode_reinforce(env, model, max_steps=50, gamma=0.99):
     return loss, total_reward
 
 
-def train_reinforce():
+def train_reinforce_learning():
     print("=== Reinforcement Learning (REINFORCE) ===")
     env = GridWorld()
     model = PolicyNet()
