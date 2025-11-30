@@ -70,3 +70,4 @@ class GridWorld:
             done = True
 
         return self.get_state(), reward, done, {}
+
