@@ -79,6 +79,32 @@ The AI (shown in green) will use its trained neural network to dodge the falling
 
 The AI learns purely through evolution - no backpropagation or gradient descent!
 
+## Reinforcement Learning (RL) Training (DQN)
+
+This project also includes a DQN-based RL agent that learns to play the same game.
+
+### Train RL agent
+```bash
+python train_rl.py
+```
+- Runs headless at high FPS
+- Automatically saves checkpoints: `best_rl_dqn.pth` and final `best_rl_dqn_final.pth`
+
+### Watch RL agent play
+```bash
+python demo_rl.py
+```
+Loads the latest saved RL model and lets the agent play.
+
+### Files
+- `rl_dqn.py`: DQN network, replay buffer, agent
+- `train_rl.py`: RL training loop
+- `demo_rl.py`: RL agent demo
+
+RL tips:
+- If you have a GPU, PyTorch will use it automatically. You can verify by checking `agent.device` in `train_rl.py`.
+- Adjust episodes or FPS for speed/quality trade-offs.
+
 ## Controls
 - **Left Arrow** or **A**: Move left
 - **Right Arrow** or **D**: Move right
@@ -98,6 +124,8 @@ The AI learns purely through evolution - no backpropagation or gradient descent!
 - `demo_ai.py`: Watch a trained AI play
 - `ai_player.py`: Neural network and evolution logic
 - `best_agent_*.pth`: Saved AI models (created after training)
+- `rl_dqn.py`: DQN network, replay buffer, agent
+- `train_rl.py`: RL training loop
+- `demo_rl.py`: RL agent demo
 
 Good luck!
-
