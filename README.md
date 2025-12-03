@@ -14,6 +14,7 @@ This is a small document to help you get started with modern DevOps and AI pract
 ### 2025
 - [JParser](./projects/2025/jparser): A Node.js library for parsing and manipulating JSON data with advanced features.
 - [PokeBattle](./projects/2025/pokebattle): API and UI in docker with example GitHub actions workflows and ML.NET examples.
+- [WalkGame](./projects/2025/walk-game): A Pytorch-based 2D game where an agent learns to navigate and environment using Supervised Learning, Reinforcement Learning, and NeuroEvolution.
 
 ### 2024
 
